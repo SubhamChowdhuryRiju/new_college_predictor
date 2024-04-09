@@ -30,13 +30,11 @@ def predictor():
         if mains_rank == 0:
             mains_rank = int((100 - mains_percentage) * 823967 / 100)
 
-        print(mains_rank)
-
         rank_score = int(pvr(mains_percentage, pwd, category))
         college_list_result = finalList(mains_rank, mains_percentage, category, state, gender, pwd, limit, advance_rank)
         current_year = datetime.now().year
 
-        return render_template('result.html', year=current_year, ranks=rank_score, category=category,
+        return render_template('result.html', year=current_year, ranks=mains_rank, category=category,
                                college_list_result=college_list_result.to_html(classes='table table-striped table '
                                                                                        'table-bordered table-striped '
                                                                                        'custom-table',

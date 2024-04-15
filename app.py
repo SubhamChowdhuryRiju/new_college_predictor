@@ -5,6 +5,6 @@ app = Flask(__name__, template_folder='FrontEnd/templates', static_folder='Front
 
 app.register_blueprint(college_predictor)
 
-
-if __name__ == '__main__':
-  app.run(debug=True)
+@app.route('/')
+def welcome():
+  return "hello"

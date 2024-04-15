@@ -8,6 +8,3 @@ app.register_blueprint(college_predictor)
 @app.route('/')
 def welcome():
   return "hello"
-  
-if __name__ == '__main__':
-  app.run(debug=True)
